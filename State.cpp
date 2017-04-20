@@ -1,48 +1,37 @@
 #include "State.hpp"
 
-
-
+//Default constructor
 State::State()
-: stateNumber(0), finalState(false), winner(-1)
-{
+: stateNumber(0), finalState(false), winner(-1) {
     //-1 represents an empty square on the board
     //0 represents an O's place
     //1 represents an X's place
     for(int i = 0; i < 3; ++i)
         board[i].fill(-1);
-
-
 }
 
+//Parameterized constructor
 State::State(const std::array<std::array<int,3>,3>& otherBoard)
-: stateNumber(0), finalState(false), winner(-1)
-{
+: stateNumber(0), finalState(false), winner(-1) {
     board = otherBoard;
-    //-1 represents an empty square on the board
-    //0 represents an O's place
-    //1 represents an X's place
 }
 
-State::~State()
-{
-
+//Destructor
+State::~State() {
 }
 
-void State::setStateNumber(int number)
-{
+void State::setStateNumber(int number) {
     stateNumber = number;
 }
 
-int State::getStateNumber() const
-{
+int State::getStateNumber() const {
     return stateNumber;
 }
 
 //checks if the board is in a winning state. Winning states have been drawn next to their
 //respective logic statements.
 //If the board is a winning board (or final dfa state) then we mark it as such and return true
-bool State::isFinal()
-{
+bool State::isFinal() {
     if(finalState == true) //if we already know the state being checked is final, dont bother checking
         return true;
     //if any of these 8 combinations are true, the state is a final state. The winner is recorded

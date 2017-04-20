@@ -1,6 +1,5 @@
 #ifndef __DFA
 #define __DFA
-#include <vector>
 #include "State.hpp"
 
 
@@ -18,8 +17,8 @@ public:
 private:
     std::vector<State*> collectionOfStates; //holds all of the states created
     std::vector<State*> firstTurnStates;    //holds all of the states created on the first turn, subset of all states
-    std::vector<State*> secondTurnStates;
-    std::vector<State*> thirdTurnStates;
+    std::vector<State*> secondTurnStates;   //"                                    " second turn, "                 "
+    std::vector<State*> thirdTurnStates;    //...
     std::vector<State*> fourthTurnStates;
     std::vector<State*> fifthTurnStates;
     std::vector<State*> sixthTurnStates;

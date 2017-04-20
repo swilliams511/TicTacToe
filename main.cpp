@@ -1,4 +1,3 @@
-#include <iostream>
 #include "DFA.hpp"
 #include "State.hpp"
 #include <ctime>
